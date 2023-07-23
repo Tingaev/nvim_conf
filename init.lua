@@ -1,6 +1,7 @@
 require "plugins"
 require "user/nvim-tree"
 require "user/which-key"
+require "user/colorscheme"
 require "disable_arrow"
 require "settings"
 require "keymaps"
