@@ -12,26 +12,10 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-      require("which-key").setup()
-    end
-  }
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
-    },
-  }
-
-
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+  use {"wbthomason/packer.nvim"}
+  use {"folke/which-key.nvim"}
+  use {"kyazdani42/nvim-web-devicons"} 
+  use {"kyazdani42/nvim-tree.lua"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
