@@ -1,4 +1,5 @@
 require('plugins')
+require('nvim-tree')
 require('disable_arrow')
 require('settings')
 require('keymaps')
