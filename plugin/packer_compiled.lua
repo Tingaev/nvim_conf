@@ -74,6 +74,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["auto-save.nvim"] = {
+    loaded = true,
+    path = "/Users/matvey/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/nvim-zh/auto-save.nvim"
+  },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/matvey/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/Users/matvey/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",

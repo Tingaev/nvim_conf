@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
   use {"lukas-reineke/indent-blankline.nvim"}
   use {"folke/tokyonight.nvim"}
   use {"nvim-zh/auto-save.nvim"}
+  use {"akinsho/bufferline.nvim"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
