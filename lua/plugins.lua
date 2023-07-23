@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
   use {"kyazdani42/nvim-tree.lua"}
   use {"lukas-reineke/indent-blankline.nvim"}
   use {"folke/tokyonight.nvim"}
+  use {"nvim-zh/auto-save.nvim"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

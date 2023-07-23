@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/matvey/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/matvey/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/Users/matvey/.local/share/nvim/site/pack/packer/start/which-key.nvim",
