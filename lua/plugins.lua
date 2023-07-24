@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
   use {"nvim-zh/auto-save.nvim"}
   use {"akinsho/bufferline.nvim"}
   use {"nvim-lualine/lualine.nvim"}
+  use {"nvim-telescope/telescope.nvim"}
+  use {"nvim-lua/plenary.nvim"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
