@@ -27,20 +27,27 @@ packer.init({
 })
 
 return require('packer').startup(function(use)
-  use {"wbthomason/packer.nvim"}
-  use {"folke/which-key.nvim"}
-  use {"kyazdani42/nvim-web-devicons"} 
-  use {"kyazdani42/nvim-tree.lua"}
-  use {"lukas-reineke/indent-blankline.nvim"}
-  use {"folke/tokyonight.nvim"}
-  use {"nvim-zh/auto-save.nvim"}
-  use {"akinsho/bufferline.nvim"}
-  use {"nvim-lualine/lualine.nvim"}
-  use {"nvim-telescope/telescope.nvim"}
-  use {"nvim-lua/plenary.nvim"}
-  use {"ggandor/lightspeed.nvim"}
-  use {"rebelot/kanagawa.nvim"}
-
+    use {"wbthomason/packer.nvim"}
+    use {"folke/which-key.nvim"}
+    use {"kyazdani42/nvim-web-devicons"}
+    use {"kyazdani42/nvim-tree.lua"}
+    use {"lukas-reineke/indent-blankline.nvim"}
+    use {"folke/tokyonight.nvim"}
+    use {"nvim-zh/auto-save.nvim"}
+    use {"akinsho/bufferline.nvim"}
+    use {"nvim-lualine/lualine.nvim"}
+    use {"nvim-telescope/telescope.nvim"}
+    use {"nvim-lua/plenary.nvim"}
+    use {"ggandor/lightspeed.nvim"}
+    use {"rebelot/kanagawa.nvim"}
+    use {"rose-pine/neovim"}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,
+    }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
