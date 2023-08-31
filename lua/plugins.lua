@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
     use {"ggandor/lightspeed.nvim"}
     use {"rebelot/kanagawa.nvim"}
     use {"rose-pine/neovim"}
+    use {"ThePrimeagen/harpoon"}
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -50,8 +51,8 @@ return require('packer').startup(function(use)
     }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)
 
