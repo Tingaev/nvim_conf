@@ -4,13 +4,13 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+local builtin = require 'telescope.builtin'
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    path_display = { "absolute" },
 
     mappings = {
       i = {
@@ -78,6 +78,9 @@ telescope.setup {
     },
   },
   pickers = {
+      find_files = {
+      theme = "dropdown",
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,

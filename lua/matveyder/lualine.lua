@@ -45,13 +45,15 @@ lualine.setup({
 	sections = {
 	--	lualine_a = { branch, diagnostics },
 		lualine_a = { branch },
-		lualine_b = { mode },
+		lualine_b = { 
+            mode, 
+            { 'filename', file_status = false, path = 1 },
+        },
 		lualine_c = {},
 	},
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
-		lualine_c = { "filename" },
 		lualine_x = { "location" },
 		lualine_y = {},
 		lualine_z = {},
