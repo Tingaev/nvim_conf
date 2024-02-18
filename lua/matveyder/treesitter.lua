@@ -2,13 +2,19 @@ local status_ok, treesitter_config = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   return
 end
+use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+--require('ufo').setup({
+--    provider_selector = function(bufnr, filetype, buftype)
+--        return {'treesitter', 'indent'}
+--    end
+--})
 
 treesitter_config.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "vimdoc", "lua", "go", "python" },
+  ensure_installed = { "vimdoc", "lua", "go", "python" , "perl"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+  sync_install = true,
 
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally

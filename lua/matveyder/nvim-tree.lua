@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-require("nvim-tree").setup{
+nvim_tree.setup {
     view = {
         adaptive_size = true,
         number = true,

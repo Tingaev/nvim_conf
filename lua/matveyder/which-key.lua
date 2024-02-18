@@ -28,7 +28,7 @@ local setup = {
   -- operators = { gc = "Comments" },
   key_labels = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
-    -- For example:
+    -- For example
     -- ["<space>"] = "SPC",
     -- ["<cr>"] = "RET",
     -- ["<tab>"] = "TAB",
@@ -78,35 +78,35 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+--["b"] = {
+--    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+--    "Buffers",
+--},
+--["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Live grep" },
+--["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+--b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+--c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+--h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+--M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+--r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+--R = { "<cmd>Telescope registers<cr>", "Registers" },
+--k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+--C = { "<cmd>Telescope commands<cr>", "Commands" },
+--["f"] = {
+--    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+--    "Find files",
+--},
 local mappings = {
   ["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon: add file" },
---  ["1"] = { "function() require('harpoon.ui').nav_file(1) end" }
-  ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Buffers",
-  },
+  ["1"] = { "function() require('harpoon.ui').nav_file(1) end" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
-  },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Live grep" },
-  ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   s = {
     name = "Search",
-    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-    M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-    R = { "<cmd>Telescope registers<cr>", "Registers" },
-    k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-    C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
   p = {
