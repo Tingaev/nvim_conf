@@ -8,9 +8,10 @@ vim.keymap.set('n', '<leader>f', function()
 end, { desc = "Find Files"})
 
 vim.keymap.set('n', '<leader>F', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = "Live Grep"})
---vim.keymap.set('n', '<leader>o', "<cmd>Telescope neoclip<CR>", { desc = "Clip reg"})
+vim.keymap.set('n', '<leader>sp', "<cmd>lua require('telescope').extensions.neoclip.default()<CR>", { desc = "Clip reg"})
 vim.keymap.set('n', '<leader>sg', '<cmd>lua require("telescope.builtin").live_grep({ glob_pattern = "!{spec,test}"})<CR>', { desc = "Live Grep Code"})
 vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = "Find Buffers"})
+vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<CR>", { desc = "Telescope Undo" })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = "Find Help Tags"})
 --vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = "Find Symbols"}) TODO: uncomment after install LSP
 --vim.keymap.set('n', '<leader>si', '<cmd>AdvancedGitSearch<CR>', { desc = "AdvancedGitSearch"}) TODO: uncoment after install plugin for Git
@@ -91,20 +92,38 @@ telescope.setup({
       show_pluto = true,
     },
     extensions = {
---        undo = {
---            use_delta = true,
---            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
---            side_by_side = false,
---            diff_context_lines = vim.o.scrolloff,
---            entry_format = "state #$ID, $STAT, $TIME",
---            mappings = {
---                i = {
---                    ["<C-cr>"] = require("telescope-undo.actions").yank_additions,
---                    ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
---                    ["<cr>"] = require("telescope-undo.actions").restore,
---                },
---            },
---        },
+        neoclip = {
+            mappings = {
+                n = {
+                    ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                },
+                i = {
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-c>"] = actions.close,
+                    ["<C-k>"] = actions.move_selection_previous,
+                    ["<C-p>"] = actions.cycle_history_next,
+                    ["<C-n>"] = actions.cycle_history_prev,
+                    ["<C-q>"] = actions.delete_buffer,
+                    ["<CR>"] = select_one_or_multi,
+                    ["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                    ["<C-S-d>"] = actions.delete_buffer,
+                }
+            },
+        },
+        undo = {
+            use_delta = true,
+            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
+            side_by_side = false,
+            diff_context_lines = vim.o.scrolloff,
+            entry_format = "state #$ID, $STAT, $TIME",
+            mappings = {
+                i = {
+                    ["<C-cr>"] = require("telescope-undo.actions").yank_additions,
+                    ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+                    ["<cr>"] = require("telescope-undo.actions").restore,
+                },
+            },
+        },
     }
 })
 
@@ -115,7 +134,7 @@ require("telescope").load_extension "neoclip"
 --require('telescope').load_extension('ui-select')
 --vim.g.zoxide_use_select = true
 --
---require("telescope").load_extension("undo")
+require("telescope").load_extension("undo")
 --
 --require("telescope").load_extension("advanced_git_search")
 --

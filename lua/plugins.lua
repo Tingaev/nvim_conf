@@ -55,6 +55,8 @@ return require('packer').startup(function(use)
 --    require('neoclip').setup()
 --  end,
 --}
+    use {"mbbill/undotree"}
+    use {"debugloop/telescope-undo.nvim"}
     use {"nvim-lua/plenary.nvim"}
     use {"ggandor/lightspeed.nvim"}
     use {"rebelot/kanagawa.nvim"}
@@ -62,6 +64,7 @@ return require('packer').startup(function(use)
     use {"ThePrimeagen/harpoon"}
     use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+    use {"windwp/nvim-autopairs"}
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
     if packer_bootstrap then
