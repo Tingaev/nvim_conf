@@ -107,6 +107,7 @@ local mappings = {
 
   s = {
     name = "Search",
+    l = { "<cmd>Hardtime toggle<cr>", "HARDTIME" },
   },
 
   p = {

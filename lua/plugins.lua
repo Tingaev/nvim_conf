@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
     use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
     use {"windwp/nvim-autopairs"}
+    use {'numToStr/Comment.nvim'}
+    use {'m4xshen/hardtime.nvim'}
+    
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
     if packer_bootstrap then
