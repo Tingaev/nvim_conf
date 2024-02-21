@@ -36,7 +36,6 @@ return require('packer').startup(function(use)
     use {"nvim-zh/auto-save.nvim"}
     use {"akinsho/bufferline.nvim"}
     use {"nvim-lualine/lualine.nvim"}
-    --use {"nvim-telescope/telescope.nvim"}
     use {
       "nvim-telescope/telescope.nvim",
       requires = {
@@ -44,17 +43,6 @@ return require('packer').startup(function(use)
         { "acksld/nvim-neoclip.lua" },
       },
     }
---    use {
---        "acksld/nvim-neoclip.lua",
---        
---        requires = {
---            {'kkharji/sqlite.lua', module = 'sqlite'},
---            {'nvim-telescope/telescope.nvim'},
---    },
---  config = function()
---    require('neoclip').setup()
---  end,
---}
     use {"mbbill/undotree"}
     use {"debugloop/telescope-undo.nvim"}
     use {"nvim-lua/plenary.nvim"}
