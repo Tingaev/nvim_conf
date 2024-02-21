@@ -67,6 +67,8 @@ return require('packer').startup(function(use)
     use {"windwp/nvim-autopairs"}
     use {'numToStr/Comment.nvim'}
     use {'m4xshen/hardtime.nvim'}
+    use {'ms-jpq/coq_nvim'}
+
     
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

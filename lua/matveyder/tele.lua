@@ -7,6 +7,7 @@ vim.keymap.set('n', '<leader>f', function()
     })
 end, { desc = "Find Files"})
 
+
 vim.keymap.set('n', '<leader>F', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = "Live Grep"})
 vim.keymap.set('n', '<leader>sp', "<cmd>lua require('telescope').extensions.neoclip.default()<CR>", { desc = "Clip reg"})
 vim.keymap.set('n', '<leader>sg', '<cmd>lua require("telescope.builtin").live_grep({ glob_pattern = "!{spec,test}"})<CR>', { desc = "Live Grep Code"})
