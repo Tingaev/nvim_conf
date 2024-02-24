@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<CR>", { desc = "Telescope Undo" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Find Help Tags" })
 --vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = "Find Symbols"}) TODO: uncomment after install LSP
---vim.keymap.set('n', '<leader>si', '<cmd>AdvancedGitSearch<CR>', { desc = "AdvancedGitSearch"}) TODO: uncoment after install plugin for Git
+vim.keymap.set("n", "<leader>si", "<cmd>AdvancedGitSearch<CR>", { desc = "AdvancedGitSearch" }) --TODO: uncoment after install plugin for Git
 vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = "Find Old Files" })
 vim.keymap.set("n", "<leader>sc", builtin.colorscheme, { desc = "Find Old Files" })
 vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Find Word under Cursor" })
@@ -153,7 +153,7 @@ require("telescope").load_extension "neoclip"
 --
 require("telescope").load_extension "undo"
 --
---require("telescope").load_extension("advanced_git_search")
+require("telescope").load_extension "advanced_git_search"
 --
 require("telescope").load_extension "live_grep_args"
 --

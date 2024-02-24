@@ -41,9 +41,11 @@ return require("packer").startup(function(use)
 		requires = {
 			{ "nvim-telescope/telescope-live-grep-args.nvim" },
 			{ "acksld/nvim-neoclip.lua" },
+			{ "aaronhallaert/advanced-git-search.nvim" },
 		},
 	}
 	use { "mbbill/undotree" }
+	use { "tpope/vim-fugitive" }
 	use { "rcarriga/nvim-notify" }
 	use { "debugloop/telescope-undo.nvim" }
 	use { "nvim-lua/plenary.nvim" }
@@ -57,6 +59,7 @@ return require("packer").startup(function(use)
 	use { "numToStr/Comment.nvim" }
 	use { "m4xshen/hardtime.nvim", requires = { "MunifTanjim/nui.nvim" } }
 	use { "ms-jpq/coq_nvim" }
+	use { "lewis6991/gitsigns.nvim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
