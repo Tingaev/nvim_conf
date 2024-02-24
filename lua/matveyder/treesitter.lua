@@ -2,12 +2,14 @@ local status_ok, treesitter_config = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
   return
 end
-use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
 --require('ufo').setup({
 --    provider_selector = function(bufnr, filetype, buftype)
 --        return {'treesitter', 'indent'}
 --    end
 --})
+-- local tree_setter = require("nvim-treesitter")
+-- vim.cmd("TSEnable highlight")
 
 treesitter_config.setup {
   -- A list of parser names, or "all"
@@ -28,5 +30,5 @@ treesitter_config.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
-  },
-} 
+  }
+}
