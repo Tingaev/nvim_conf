@@ -23,3 +23,11 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.notify = require "notify"
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = vim.api.nvim_create_augroup("highlight_yank", {}),
+	desc = "Hightlight selection on yank",
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank { higroup = "IncSearch", timeout = 500 }
+	end,
+})
