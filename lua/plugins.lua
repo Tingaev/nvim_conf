@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
       },
     }
     use {"mbbill/undotree"}
+    use {"rcarriga/nvim-notify"}
     use {"debugloop/telescope-undo.nvim"}
     use {"nvim-lua/plenary.nvim"}
     use {"ggandor/lightspeed.nvim"}
@@ -54,7 +55,7 @@ return require('packer').startup(function(use)
     use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
     use {"windwp/nvim-autopairs"}
     use {'numToStr/Comment.nvim'}
-    use {'m4xshen/hardtime.nvim'}
+    use {'m4xshen/hardtime.nvim', requires = {'MunifTanjim/nui.nvim'}, }
     use {'ms-jpq/coq_nvim'}
 
     
