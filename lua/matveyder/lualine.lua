@@ -32,8 +32,7 @@ local location = {
 	padding = 0,
 }
 
-
-lualine.setup({
+lualine.setup {
 	options = {
 		icons_enabled = true,
 		theme = "auto",
@@ -43,12 +42,12 @@ lualine.setup({
 		always_divide_middle = true,
 	},
 	sections = {
-	--	lualine_a = { branch, diagnostics },
+		--	lualine_a = { branch, diagnostics },
 		lualine_a = { branch },
-		lualine_b = { 
-            mode, 
-            { 'filename', file_status = false, path = 1 },
-        },
+		lualine_b = {
+			mode,
+			{ "filename", file_status = false, path = 1 },
+		},
 		lualine_c = {},
 	},
 	inactive_sections = {
@@ -60,5 +59,4 @@ lualine.setup({
 	},
 	tabline = {},
 	extensions = {},
-})
-
+}

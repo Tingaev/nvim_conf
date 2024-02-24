@@ -1,3 +1,3 @@
-require("hardtime").setup ({
-    enabled=false
-})
+require("hardtime").setup {
+	enabled = false,
+}

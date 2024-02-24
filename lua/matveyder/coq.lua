@@ -1,3 +1,3 @@
 local coq = require "coq"
 
-vim.cmd('COQnow')
+vim.cmd "COQnow"
