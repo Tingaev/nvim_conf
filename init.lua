@@ -17,4 +17,4 @@ require "matveyder.hardtime"
 require "matveyder.coq"
 require "matveyder.notify"
 require "matveyder.treesitter"
-
+require "matveyder.formatter_lua"
