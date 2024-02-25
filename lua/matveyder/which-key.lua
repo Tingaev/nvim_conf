@@ -98,7 +98,6 @@ local opts = {
 --},
 local mappings = {
 	["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon: add file" },
-	["1"] = { "function() require('harpoon.ui').nav_file(1) end" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
