@@ -32,7 +32,6 @@ return require("packer").startup(function(use)
 	use { "kyazdani42/nvim-web-devicons" }
 	use { "kyazdani42/nvim-tree.lua" }
 	use { "lukas-reineke/indent-blankline.nvim" }
-	use { "folke/tokyonight.nvim" }
 	use { "nvim-zh/auto-save.nvim" }
 	use { "akinsho/bufferline.nvim" }
 	use { "nvim-lualine/lualine.nvim" }
@@ -50,8 +49,6 @@ return require("packer").startup(function(use)
 	use { "debugloop/telescope-undo.nvim" }
 	use { "nvim-lua/plenary.nvim" }
 	use { "ggandor/lightspeed.nvim" }
-	use { "rebelot/kanagawa.nvim" }
-	use { "rose-pine/neovim" }
 	use { "ThePrimeagen/harpoon" }
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 	use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }
@@ -60,6 +57,11 @@ return require("packer").startup(function(use)
 	use { "m4xshen/hardtime.nvim", requires = { "MunifTanjim/nui.nvim" } }
 	use { "ms-jpq/coq_nvim" }
 	use { "lewis6991/gitsigns.nvim" }
+	use { "folke/zen-mode.nvim" }
+	-- Colorschemes
+	use { "rebelot/kanagawa.nvim" }
+	use { "folke/tokyonight.nvim" }
+	use { "rose-pine/neovim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
