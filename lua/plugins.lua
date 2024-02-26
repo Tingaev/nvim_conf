@@ -58,6 +58,7 @@ return require("packer").startup(function(use)
 	use { "ms-jpq/coq_nvim" }
 	use { "lewis6991/gitsigns.nvim" }
 	use { "folke/zen-mode.nvim" }
+	use { "sitiom/nvim-numbertoggle" }
 	-- Colorschemes
 	use { "rebelot/kanagawa.nvim" }
 	use { "folke/tokyonight.nvim" }

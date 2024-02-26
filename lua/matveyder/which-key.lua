@@ -104,9 +104,11 @@ local mappings = {
 	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
-	s = {
-		name = "Search",
+	l = {
+		name = "Other",
 		l = { "<cmd>Hardtime toggle<cr>", "HARDTIME" },
+		r = { "<cmd>set number relativenumber<cr>", "Relative number" },
+		n = { "<cmd>set number norelativenumber<cr>", "Relative number" },
 	},
 
 	p = {
