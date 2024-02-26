@@ -62,6 +62,12 @@ return require("packer").startup(function(use)
 	use { "rebelot/kanagawa.nvim" }
 	use { "folke/tokyonight.nvim" }
 	use { "rose-pine/neovim" }
+	use { "marko-cerovac/material.nvim" }
+	use { "sainnhe/sonokai" }
+	use { "nyoom-engineering/oxocarbon.nvim" }
+	use { "andersevenrud/nordic.nvim" }
+	use { "projekt0n/github-nvim-theme" }
+	use { "EdenEast/nightfox.nvim" }
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
