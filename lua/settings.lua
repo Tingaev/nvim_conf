@@ -3,6 +3,8 @@ local opt = vim.opt -- global/buffer/windows-scoped options
 -- Главные
 -----------------------------------------------------------
 
+opt.showmode = false
+
 opt.cursorline = true -- Подсветка строки с курсором
 opt.number = true -- Включаем нумерацию строк
 opt.relativenumber = true -- Вкл. относительную нумерацию строк

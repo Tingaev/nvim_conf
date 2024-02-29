@@ -46,7 +46,7 @@ lualine.setup {
 		lualine_a = { branch },
 		lualine_b = {
 			mode,
-			{ "filename", file_status = false, path = 1 },
+			{ "filename", file_status = true, path = 1 },
 		},
 		lualine_c = {},
 	},
