@@ -109,6 +109,7 @@ local mappings = {
 		l = { "<cmd>Hardtime toggle<cr>", "HARDTIME" },
 		r = { "<cmd>set number relativenumber<cr>", "Relative number" },
 		n = { "<cmd>set number norelativenumber<cr>", "Relative number" },
+		z = { "<cmd>ZenMode<cr>", "Relative number" },
 	},
 
 	p = {
