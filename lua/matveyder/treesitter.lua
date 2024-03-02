@@ -15,6 +15,16 @@ treesitter_config.setup {
 	-- A list of parser names, or "all"
 	ensure_installed = { "vimdoc", "lua", "go", "python", "perl" },
 
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			node_incremental = "<C-space>",
+			init_selection = "<C-space>",
+			scope_incremental = false,
+			node_decremental = "<bs>",
+		},
+	},
+
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,
 
