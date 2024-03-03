@@ -23,6 +23,23 @@ lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities({
 			diagnostics = {
 				globals = {
 					"vim",
+                    -- Section of work
+					"runtime",
+					"userver",
+					"get_param",
+                    "server_conf",
+                    "crypto",
+                    "get_input_header",
+                    "ujit",
+                    "parse_accept_language",
+                    "get_cookie",
+                    "data",
+                    "spend_budget2",
+                    "map_lookup",
+                    "force_write_rawlog",
+                    "add_cookie",
+                    "gif1x1",
+                    "force_write_rawlog",
 				},
 			},
 		},
