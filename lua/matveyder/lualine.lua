@@ -48,7 +48,10 @@ lualine.setup {
 			mode,
 			{ "filename", file_status = true, path = 1 },
 		},
-		lualine_c = {},
+		lualine_c = {
+			"navic",
+			color_correction = nil, -- Can be nil, "static" or "dynamic". This option is useful only when you have highlights enabled.
+		},
 	},
 	inactive_sections = {
 		lualine_a = {},

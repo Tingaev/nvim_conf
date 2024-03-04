@@ -29,7 +29,7 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<CR>", { desc = "Telescope Undo" })
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Find Help Tags" })
-vim.keymap.set('n', '<leader>ss', builtin.lsp_document_symbols, { desc = "Find Symbols"})
+vim.keymap.set("n", "<leader>ss", builtin.lsp_document_symbols, { desc = "Find Symbols" })
 vim.keymap.set("n", "<leader>si", "<cmd>AdvancedGitSearch<CR>", { desc = "AdvancedGitSearch" }) --TODO: uncoment after install plugin for Git
 vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = "Find Old Files" })
 vim.keymap.set("n", "<leader>sc", builtin.colorscheme, { desc = "Pick colorscheme" })
