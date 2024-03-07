@@ -35,8 +35,8 @@ vim.keymap.set("n", "<leader>so", builtin.oldfiles, { desc = "Find Old Files" })
 vim.keymap.set("n", "<leader>sc", builtin.colorscheme, { desc = "Pick colorscheme" })
 vim.keymap.set("n", "<leader>sj", builtin.jumplist, { desc = "Jump list" })
 vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Find Word under Cursor" })
-vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Search Git Commits" })
-vim.keymap.set("n", "<leader>gb", builtin.git_bcommits, { desc = "Search Git Commits for Buffer" })
+vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Search Git Commits" }) -- TODO: need?
+vim.keymap.set("n", "<leader>gb", builtin.git_bcommits, { desc = "Search Git Commits for Buffer" }) -- TODO: need?
 vim.keymap.set("n", "<leader>/", function()
 	-- You can pass additional configuration to telescope to change theme, layout, etc.
 	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
