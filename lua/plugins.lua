@@ -59,6 +59,7 @@ return require("packer").startup(function(use)
 	use { "lewis6991/gitsigns.nvim" }
 	use { "folke/zen-mode.nvim" }
 	use { "sitiom/nvim-numbertoggle" }
+	use { "cameron-wags/rainbow_csv.nvim" }
 
 	use { "williamboman/mason.nvim" }
 	use { "williamboman/mason-lspconfig.nvim" }
