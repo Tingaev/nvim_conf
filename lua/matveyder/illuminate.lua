@@ -1,2 +1,1 @@
- require("illuminate").configure{}
-
+require("illuminate").configure {}
