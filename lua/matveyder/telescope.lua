@@ -117,7 +117,6 @@ telescope.setup {
 				},
 				i = {
 					["<C-j>"] = actions.move_selection_next,
-					["<C-c>"] = actions.close,
 					["<C-k>"] = actions.move_selection_previous,
 					["<C-p>"] = actions.cycle_history_next,
 					["<C-n>"] = actions.cycle_history_prev,
