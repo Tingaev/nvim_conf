@@ -61,7 +61,7 @@ return require("packer").startup(function(use)
 	use { "sitiom/nvim-numbertoggle" }
 	use { "RRethy/vim-illuminate" }
 	use { "eandrju/cellular-automaton.nvim" }
-	use { "sudormrfbin/cheatsheet.nvm" }
+	use { "sudormrfbin/cheatsheet.nvim" }
 
 	use { "williamboman/mason.nvim" }
 	use { "williamboman/mason-lspconfig.nvim" }
