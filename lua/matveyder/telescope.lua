@@ -93,6 +93,7 @@ telescope.setup {
 				["<C-k>"] = actions.move_selection_previous,
 				["<C-p>"] = actions.cycle_history_next,
 				["<C-n>"] = actions.cycle_history_prev,
+                ["<C-a>"] = actions.add_selected_to_qflist,
 				["<C-q>"] = actions.delete_buffer,
 				["<CR>"] = select_one_or_multi,
 				["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,

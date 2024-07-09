@@ -6,6 +6,7 @@ local coq = require "coq"
 local lspconfig = require "lspconfig"
 local navic = require "nvim-navic"
 lspconfig.gopls.setup {}
+lspconfig.pylsp.setup {}
 local on_attach = function(client, bufnr)
 	if client.server_capabilities.documentSymbolProvider then
 		navic.attach(client, bufnr)
