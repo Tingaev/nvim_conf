@@ -93,7 +93,7 @@ telescope.setup {
 				["<C-k>"] = actions.move_selection_previous,
 				["<C-p>"] = actions.cycle_history_next,
 				["<C-n>"] = actions.cycle_history_prev,
-                ["<C-a>"] = actions.add_selected_to_qflist,
+				["<C-a>"] = actions.add_selected_to_qflist,
 				["<C-q>"] = actions.delete_buffer,
 				["<CR>"] = select_one_or_multi,
 				["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -132,7 +132,7 @@ telescope.setup {
 			use_delta = true,
 			use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
 			side_by_side = false,
-			diff_context_lines = vim.o.scrolloff,
+			vim_diff_opts = { ctxlen = 999 },
 			entry_format = "state #$ID, $STAT, $TIME",
 			mappings = {
 				i = {

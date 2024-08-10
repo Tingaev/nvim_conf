@@ -26,28 +26,18 @@ local setup = {
 	-- add operators that will trigger motion and text object completion
 	-- to enable all native operators, set the preset / operators plugin above
 	-- operators = { gc = "Comments" },
-	key_labels = {
-		-- override the label used to display some keys. It doesn't effect WK in any other way.
-		-- For example
-		-- ["<space>"] = "SPC",
-		-- ["<cr>"] = "RET",
-		-- ["<tab>"] = "TAB",
-	},
 	icons = {
 		breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
 		separator = "➜", -- symbol used between a key and it's label
 		group = "+", -- symbol prepended to a group
 	},
-	popup_mappings = {
-		scroll_down = "<c-d>", -- binding to scroll down inside the popup
-		scroll_up = "<c-u>", -- binding to scroll up inside the popup
-	},
-	window = {
-		border = "rounded", -- none, single, double, shadow
-		position = "bottom", -- bottom, top
-		margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
-		padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-		winblend = 0,
+	win = {
+		-- don't allow the popup to overlap with the cursor
+		no_overlap = true,
+		padding = { 1, 2 }, -- extra window padding [top/bottom, right/left]
+		title = true,
+		title_pos = "center",
+		zindex = 1000,
 	},
 	layout = {
 		height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -55,72 +45,35 @@ local setup = {
 		spacing = 3, -- spacing between columns
 		align = "left", -- align columns left, center or right
 	},
-	ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
-	hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 	show_help = true, -- show help message on the command line when the popup is visible
-	triggers = "auto", -- automatically setup triggers
-	-- triggers = {"<leader>"} -- or specify a list manually
-	triggers_blacklist = {
-		-- list of mode / prefixes that should never be hooked by WhichKey
-		-- this is mostly relevant for key maps that start with a native binding
-		-- most people should not need to change this
-		i = { "j", "k" },
-		v = { "j", "k" },
+	triggers = {
+		{ "<auto>", mode = "nxsot" },
 	},
 }
 
-local opts = {
-	mode = "n", -- NORMAL mode
-	prefix = "<leader>",
-	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-	silent = true, -- use `silent` when creating keymaps
-	noremap = true, -- use `noremap` when creating keymaps
-	nowait = true, -- use `nowait` when creating keymaps
-}
-
---["b"] = {
---    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
---    "Buffers",
---},
---["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Live grep" },
---["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
---b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
---c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
---h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
---M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
---r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
---R = { "<cmd>Telescope registers<cr>", "Registers" },
---k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
---C = { "<cmd>Telescope commands<cr>", "Commands" },
---["f"] = {
---    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
---    "Find files",
---},
-local mappings = {
-	["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon: add file" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-
-	l = {
-		name = "Other",
-		l = { "<cmd>Hardtime toggle<cr>", "HARDTIME" },
-		r = { "<cmd>set number relativenumber<cr>", "Relative number" },
-		n = { "<cmd>set number norelativenumber<cr>", "Relative number" },
-		z = { "<cmd>ZenMode<cr>", "Zen mode" },
+which_key.add {
+	{
+		"<leader>a",
+		"<cmd>lua require('harpoon.mark').add_file()<cr>",
+		desc = "Harpoon: add file",
+		nowait = true,
+		remap = false,
 	},
-
-	p = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
-	},
+	{ "<leader>c", "<cmd>bdelete!<CR>", desc = "Close Buffer", nowait = true, remap = false },
+	{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", nowait = true, remap = false },
+	{ "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", nowait = true, remap = false },
+	{ "<leader>l", group = "Other", nowait = true, remap = false },
+	{ "<leader>ll", "<cmd>Hardtime toggle<cr>", desc = "HARDTIME", nowait = true, remap = false },
+	{ "<leader>ln", "<cmd>set number norelativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
+	{ "<leader>lr", "<cmd>set number relativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
+	{ "<leader>lz", "<cmd>ZenMode<cr>", desc = "Zen mode", nowait = true, remap = false },
+	{ "<leader>p", group = "Packer", nowait = true, remap = false },
+	{ "<leader>pS", "<cmd>PackerStatus<cr>", desc = "Status", nowait = true, remap = false },
+	{ "<leader>pc", "<cmd>PackerCompile<cr>", desc = "Compile", nowait = true, remap = false },
+	{ "<leader>pi", "<cmd>PackerInstall<cr>", desc = "Install", nowait = true, remap = false },
+	{ "<leader>ps", "<cmd>PackerSync<cr>", desc = "Sync", nowait = true, remap = false },
+	{ "<leader>pu", "<cmd>PackerUpdate<cr>", desc = "Update", nowait = true, remap = false },
+	{ "<leader>q", "<cmd>q!<CR>", desc = "Quit", nowait = true, remap = false },
+	{ "<leader>w", "<cmd>w!<CR>", desc = "Save", nowait = true, remap = false },
 }
-
 which_key.setup(setup)
-which_key.register(mappings, opts)
