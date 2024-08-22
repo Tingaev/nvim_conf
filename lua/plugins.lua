@@ -67,6 +67,14 @@ return require("packer").startup(function(use)
 	use { "williamboman/mason-lspconfig.nvim" }
 	use { "neovim/nvim-lspconfig" }
 	use { "SmiteshP/nvim-navic" }
+	use {
+		"epwalsh/obsidian.nvim",
+		tag = "*", -- recommended, use latest release instead of latest commit
+		requires = {
+			-- Required.
+			"nvim-lua/plenary.nvim",
+		},
+	}
 	-- Colorschemes
 	use { "rebelot/kanagawa.nvim" }
 	use { "folke/tokyonight.nvim" }

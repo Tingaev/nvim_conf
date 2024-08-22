@@ -52,6 +52,7 @@ local setup = {
 }
 
 which_key.add {
+	-- Harpoon
 	{
 		"<leader>a",
 		"<cmd>lua require('harpoon.mark').add_file()<cr>",
@@ -59,21 +60,45 @@ which_key.add {
 		nowait = true,
 		remap = false,
 	},
-	{ "<leader>c", "<cmd>bdelete!<CR>", desc = "Close Buffer", nowait = true, remap = false },
-	{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", nowait = true, remap = false },
-	{ "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", nowait = true, remap = false },
-	{ "<leader>l", group = "Other", nowait = true, remap = false },
-	{ "<leader>ll", "<cmd>Hardtime toggle<cr>", desc = "HARDTIME", nowait = true, remap = false },
-	{ "<leader>ln", "<cmd>set number norelativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
-	{ "<leader>lr", "<cmd>set number relativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
-	{ "<leader>lz", "<cmd>ZenMode<cr>", desc = "Zen mode", nowait = true, remap = false },
+	-- Packer
 	{ "<leader>p", group = "Packer", nowait = true, remap = false },
 	{ "<leader>pS", "<cmd>PackerStatus<cr>", desc = "Status", nowait = true, remap = false },
 	{ "<leader>pc", "<cmd>PackerCompile<cr>", desc = "Compile", nowait = true, remap = false },
 	{ "<leader>pi", "<cmd>PackerInstall<cr>", desc = "Install", nowait = true, remap = false },
 	{ "<leader>ps", "<cmd>PackerSync<cr>", desc = "Sync", nowait = true, remap = false },
 	{ "<leader>pu", "<cmd>PackerUpdate<cr>", desc = "Update", nowait = true, remap = false },
+	-- Other
+	{ "<leader>h", "<cmd>nohlsearch<CR>", desc = "No Highlight", nowait = true, remap = false },
+	{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer", nowait = true, remap = false },
+	{ "<leader>c", "<cmd>bdelete!<CR>", desc = "Close Buffer", nowait = true, remap = false },
 	{ "<leader>q", "<cmd>q!<CR>", desc = "Quit", nowait = true, remap = false },
 	{ "<leader>w", "<cmd>w!<CR>", desc = "Save", nowait = true, remap = false },
+	-- Other not must have
+	{ "<leader>l", group = "Other", nowait = true, remap = false },
+	{ "<leader>ll", "<cmd>Hardtime toggle<cr>", desc = "HARDTIME", nowait = true, remap = false },
+	{ "<leader>ln", "<cmd>set number norelativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
+	{ "<leader>lr", "<cmd>set number relativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
+	{ "<leader>lz", "<cmd>ZenMode<cr>", desc = "Zen mode", nowait = true, remap = false },
+	-- Obsidian
+	{ "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template", nowait = true, remap = false },
+	{ "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Show ObsidianBacklinks", nowait = true, remap = false },
+	{ "<leader>ol", "<cmd>ObsidianLinks<CR>", desc = "Show ObsidianLinks", nowait = true, remap = false },
+	{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Create New Note", nowait = true, remap = false },
+	{ "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Search Obsidian", nowait = true, remap = false },
+	{ "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", desc = "Quick Switch", nowait = true, remap = false },
+	{ "<leader>od", "<cmd>ObsidianDailies<CR>", desc = "Dayli Notes", nowait = true, remap = false },
+
+	{
+		"<leader>oa",
+		"<cmd>ObsidianNewFromTemplate work/iponweb/liveintent/tickets/LI-1.md<CR>",
+		desc = "Dayli Notes",
+		nowait = true,
+		remap = false,
+	},
+	-- TODO: move from telescope.lua
+	-- :ObsidianNewFromTemplate [PATH] [TEMPLATE]` to create a new note from a
+	--     template in the templates folder. Selecting from a list using your preferred
+	--         picker. This command has one optional argument: the path to the new note.
 }
+
 which_key.setup(setup)
