@@ -30,7 +30,7 @@ obsidian.setup {
 		},
 	},
 	new_notes_location = "notes_subdir",
-	notes_subdir = "notes_unsort",
+	-- notes_subdir = "notes_unsort",
 	templates = {
 		folder = "templates",
 	},

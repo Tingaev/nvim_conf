@@ -95,7 +95,9 @@ which_key.add {
 		nowait = true,
 		remap = false,
 	},
-	-- TODO: move from telescope.lua
+
+	-- TODO: move all shortcuts from telescope.lua
+
 	-- :ObsidianNewFromTemplate [PATH] [TEMPLATE]` to create a new note from a
 	--     template in the templates folder. Selecting from a list using your preferred
 	--         picker. This command has one optional argument: the path to the new note.
