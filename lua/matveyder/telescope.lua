@@ -28,6 +28,7 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<CR>", { desc = "Telescope Undo" })
+
 vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Find Help Tags" })
 vim.keymap.set("n", "<leader>ss", builtin.lsp_document_symbols, { desc = "Find Symbols" })
 vim.keymap.set("n", "<leader>si", "<cmd>AdvancedGitSearch<CR>", { desc = "AdvancedGitSearch" }) --TODO: uncoment after install plugin for Git
@@ -53,6 +54,7 @@ local telescopeConfig = require "telescope.config"
 local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 
 -- I want to search in hidden/dot files.
+-- TODO: try maybe remove this
 table.insert(vimgrep_arguments, "--hidden")
 -- I don't want to search in the `.git` directory.
 table.insert(vimgrep_arguments, "--glob")
@@ -93,10 +95,10 @@ telescope.setup {
 				["<C-k>"] = actions.move_selection_previous,
 				["<C-p>"] = actions.cycle_history_next,
 				["<C-n>"] = actions.cycle_history_prev,
-				["<C-a>"] = actions.add_selected_to_qflist,
+				["<C-a>"] = actions.add_selected_to_qflist + actions.open_qflist,
 				["<C-q>"] = actions.delete_buffer,
 				["<CR>"] = select_one_or_multi,
-				["<C-w>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<C-w>"] = actions.send_to_qflist + actions.open_qflist,
 				["<C-S-d>"] = actions.delete_buffer,
 			},
 		},
@@ -104,7 +106,7 @@ telescope.setup {
 	pickers = {
 		find_files = {
 			-- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
-			find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" },
+			find_command = { "rg", "--files", "--glob", "!**/.git/*" },
 		},
 	},
 	planets = {
