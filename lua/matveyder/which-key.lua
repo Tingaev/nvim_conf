@@ -80,13 +80,14 @@ which_key.add {
 	{ "<leader>lr", "<cmd>set number relativenumber<cr>", desc = "Relative number", nowait = true, remap = false },
 	{ "<leader>lz", "<cmd>ZenMode<cr>", desc = "Zen mode", nowait = true, remap = false },
 	-- Obsidian
-	{ "<leader>ot", "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template", nowait = true, remap = false },
+	{ "<leader>oT", "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template", nowait = true, remap = false },
 	{ "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Show ObsidianBacklinks", nowait = true, remap = false },
 	{ "<leader>ol", "<cmd>ObsidianLinks<CR>", desc = "Show ObsidianLinks", nowait = true, remap = false },
 	{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Create New Note", nowait = true, remap = false },
 	{ "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Search Obsidian", nowait = true, remap = false },
 	{ "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", desc = "Quick Switch", nowait = true, remap = false },
 	{ "<leader>od", "<cmd>ObsidianDailies<CR>", desc = "Dayli Notes", nowait = true, remap = false },
+	{ "<leader>ot", "<cmd>ObsidianTags<CR>", desc = "Dayli Notes", nowait = true, remap = false },
 
 	{
 		"<leader>oa",
