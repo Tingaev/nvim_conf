@@ -13,6 +13,7 @@ vim.keymap.set(
 	"<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
 	{ desc = "Live Grep" }
 )
+-- TODO: useless?
 vim.keymap.set(
 	"n",
 	"<leader>sp",
