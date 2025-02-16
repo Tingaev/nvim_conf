@@ -30,7 +30,7 @@ lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities {
 					"ujit",
 					"parse_accept_language",
 					"get_cookie",
-					"data",
+					-- "data",
 					"spend_budget2",
 					"map_lookup",
 					"force_write_rawlog",

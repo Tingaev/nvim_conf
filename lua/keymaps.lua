@@ -57,4 +57,4 @@ keymap("n", "<leader>j", "<cmd>cnext<CR>", { desc = "Forward QFL" })
 keymap("n", "<leader>k", "<cmd>cprev<CR>", { desc = "Backward QFL" })
 
 keymap("n", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
-keymap("n", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
+keymap("v", "<leader>y", "\"+y", { desc = "Yank to system clipboard" })
