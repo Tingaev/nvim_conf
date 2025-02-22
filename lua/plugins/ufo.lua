@@ -28,15 +28,15 @@ end
 return {
 	"kevinhwang91/nvim-ufo",
 	dependencies = "kevinhwang91/promise-async",
-    lazy = false,
-    opts = {
-        fold_virt_text_handler = handler,
-    },
+	lazy = false,
+	opts = {
+		fold_virt_text_handler = handler,
+	},
 	provider_selector = function(bufnr, filetype, buftype)
 		return { "treesitter", "indent" }
 	end,
-    keys = {
-        { "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", desc = "Open all folds" },
-        { "zM", "<cmd>lua require('ufo').closeAllFolds()<CR>", desc = "Close all folds" },
-    }
+	keys = {
+		{ "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", desc = "Open all folds" },
+		{ "zM", "<cmd>lua require('ufo').closeAllFolds()<CR>", desc = "Close all folds" },
+	},
 }

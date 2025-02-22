@@ -1,16 +1,16 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system { "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath }
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -41,9 +41,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
-  pattern = { "*" },
-  command = "silent! wall",
-  nested = true,
+	pattern = { "*" },
+	command = "silent! wall",
+	nested = true,
 })
 
 vim.cmd "language en_US"
@@ -54,14 +54,11 @@ vim.g.maplocalleader = " "
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 -- ufo setting
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-
-
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
@@ -110,7 +107,6 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "No Highlight" })
 keymap("n", "<leader>ln", "<cmd>set number norelativenumber<cr>", { desc = "Norelative number" })
 keymap("n", "<leader>lr", "<cmd>set number relativenumber<cr>", { desc = "Relative number" })
 
-
 local bindings = {
 	"<Up>",
 	"<Down>",
@@ -122,21 +118,19 @@ for _, binding in ipairs(bindings) do
 	vim.api.nvim_set_keymap("n", binding, "<Nop>", {})
 end
 
-require("lazy").setup(
-    {
-        spec = {
-            { import = "plugins" },
-        },
-          checker = {
-            enabled = false,
-            concurrency = nil, ---@type number? set to 1 to check for updates very slowly
-            notify = false, -- get a notification when new updates are found
-            frequency = 3600, -- check for updates every hour
-            check_pinned = false, -- check for pinned packages that can't be updated
-          },
-          change_detection = {
-            enabled = true,
-            notify = false, -- get a notification when changes are found
-          },
-    }
-)
+require("lazy").setup {
+	spec = {
+		{ import = "plugins" },
+	},
+	checker = {
+		enabled = false,
+		concurrency = nil, ---@type number? set to 1 to check for updates very slowly
+		notify = false, -- get a notification when new updates are found
+		frequency = 3600, -- check for updates every hour
+		check_pinned = false, -- check for pinned packages that can't be updated
+	},
+	change_detection = {
+		enabled = true,
+		notify = false, -- get a notification when changes are found
+	},
+}
