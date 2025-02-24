@@ -2,6 +2,7 @@ local opts = {
 	ensure_installed = {
 		"c",
 		"go",
+		"json",
 		"lua",
 		"python",
 		"perl",
