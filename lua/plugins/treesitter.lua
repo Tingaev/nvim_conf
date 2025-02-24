@@ -4,6 +4,7 @@ local opts = {
 		"go",
 		"json",
 		"lua",
+		"toml",
 		"python",
 		"perl",
 		"vim",
