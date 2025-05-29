@@ -2,18 +2,41 @@ function string.starts(String, Start)
 	return string.sub(String, 1, string.len(Start)) == Start
 end
 
-local tickets_to_dir_map = {
-    -- 'LI-' = '/ "work" / "iponweb" / "liveintent" / "tickets" /',
+
+local prefix_paths = {
+	["LI-"] = {
+		path = { "work", "iponweb", "liveintent", "tickets" },
+		full_prefix = "LI-",
+	},
+	["DY-"] = {
+		path = { "work", "iponweb", "dac-yieldone", "tickets" },
+		full_prefix = "DAC-YIELDONE-",
+	},
+	["D-"] = {
+		path = { "work", "iponweb", "dove", "tickets" },
+		full_prefix = "DOVE-",
+	},
 }
 
 function dir_auto_picker(spec)
 	local path = spec.dir / tostring(spec.id)
+
 	if spec.title then
-		if string.starts(spec.title, "LI-") then
-			path = spec.dir / "work" / "iponweb" / "liveintent" / "tickets" / spec.title
+		for prefix, config in pairs(prefix_paths) do
+			if string.starts(spec.title, prefix) then
+				path = spec.dir
+				for _, part in ipairs(config.path) do
+					path = path / part
+				end
+
+				local title = config.full_prefix .. string.sub(spec.title, #prefix + 1)
+				path = path / title
+				break
+			end
 		end
 	end
-	return path:with_suffix ".md"
+
+	return path:with_suffix(".md")
 end
 
 return {
