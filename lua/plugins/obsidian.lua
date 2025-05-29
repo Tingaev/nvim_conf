@@ -2,7 +2,6 @@ function string.starts(String, Start)
 	return string.sub(String, 1, string.len(Start)) == Start
 end
 
-
 local prefix_paths = {
 	["LI-"] = {
 		path = { "work", "iponweb", "liveintent", "tickets" },
@@ -36,7 +35,7 @@ function dir_auto_picker(spec)
 		end
 	end
 
-	return path:with_suffix(".md")
+	return path:with_suffix ".md"
 end
 
 return {
