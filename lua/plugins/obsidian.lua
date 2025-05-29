@@ -2,6 +2,10 @@ function string.starts(String, Start)
 	return string.sub(String, 1, string.len(Start)) == Start
 end
 
+local tickets_to_dir_map = {
+    -- 'LI-' = '/ "work" / "iponweb" / "liveintent" / "tickets" /',
+}
+
 function dir_auto_picker(spec)
 	local path = spec.dir / tostring(spec.id)
 	if spec.title then
