@@ -9,11 +9,15 @@ local prefix_paths = {
 	},
 	["DY-"] = {
 		path = { "work", "iponweb", "dac-yieldone", "tickets" },
-		full_prefix = "DAC-YIELDONE-",
+		full_prefix = "DAC_YIELDONE-",
 	},
 	["D-"] = {
 		path = { "work", "iponweb", "dove", "tickets" },
 		full_prefix = "DOVE-",
+	},
+	["F1H-"] = {
+		path = { "work", "iponweb", "f1h", "tickets" },
+		full_prefix = "F1H-",
 	},
 }
 
