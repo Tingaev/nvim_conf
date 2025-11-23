@@ -5,9 +5,6 @@ local actions = require "telescope.actions"
 
 local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 
-table.insert(vimgrep_arguments, "--hidden")
-table.insert(vimgrep_arguments, "--glob")
-table.insert(vimgrep_arguments, "!**/.git/*")
 
 return {
 	"nvim-telescope/telescope.nvim",
