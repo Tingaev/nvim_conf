@@ -135,4 +135,3 @@ require("lazy").setup {
 		notify = false, -- get a notification when changes are found
 	},
 }
-
