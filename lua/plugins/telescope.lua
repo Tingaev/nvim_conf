@@ -5,7 +5,6 @@ local actions = require "telescope.actions"
 
 local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
 
-
 return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = {
@@ -24,6 +23,7 @@ return {
 		{ "<leader>sc", builtin.colorscheme, desc = "Pick colorscheme" },
 		{ "<leader>sj", builtin.jumplist, desc = "Jump list" },
 		{ "<leader>sh", builtin.help_tags, desc = "Find Help Tags" },
+		{ "<leader>sf", builtin.git_bcommits, desc = "Find Help Tags" },
 		{ "<leader>sn", "<cmd>Telescope notify<CR>", desc = "Notifications" },
 	},
 	opts = {
