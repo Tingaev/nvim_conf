@@ -1,10 +1,6 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	opts = {
-		filters = {
-			dotfiles = true,
-			custom = { ".git" },
-		},
 		view = {
 			adaptive_size = true,
 			number = true,
