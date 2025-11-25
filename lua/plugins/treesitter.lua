@@ -12,7 +12,6 @@ local opts = {
 		"query",
 		"markdown",
 		"markdown_inline",
-		"uetlx",
 	},
 	highlight = {
 		enable = true,
@@ -37,14 +36,20 @@ vim.filetype.add {
 }
 
 local function config()
-	local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-	parser_config.uetlx = {
-		install_info = {
-			url = "/home/m.tingaev/Documents/tree-sitter-uetlx",
-			files = { "src/parser.c" },
-		},
-		filetype = "uetlx",
-	}
+	local has_uetlx = vim.fn.isdirectory "/home/m.tingaev/Documents/tree-sitter-uetlx" == 1
+
+	if has_uetlx then
+		local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+		parser_config.uetlx = {
+			install_info = {
+				url = "/home/m.tingaev/Documents/tree-sitter-uetlx",
+				files = { "src/parser.c" },
+			},
+			filetype = "uetlx",
+		}
+
+		table.insert(opts.ensure_installed, "uetlx")
+	end
 
 	require("nvim-treesitter.configs").setup(opts)
 end
