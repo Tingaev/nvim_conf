@@ -1,12 +1,7 @@
-return {
-	{
-		"rebelot/kanagawa.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		config = function()
-			vim.cmd [[colorscheme kanagawa]]
-		end,
-	},
+local colorscheme = "kanagawa"
+
+local colorschemes = {
+	{ "rebelot/kanagawa.nvim" },
 	{ "rebelot/kanagawa.nvim" },
 	{ "folke/tokyonight.nvim" },
 	{ "rose-pine/neovim" },
@@ -17,3 +12,15 @@ return {
 	{ "projekt0n/github-nvim-theme" },
 	{ "EdenEast/nightfox.nvim" },
 }
+
+for i, cs in ipairs(colorschemes) do
+	if string.find(cs[1], colorscheme, 1, true) then
+		colorschemes[i].lazy = false
+		colorschemes[i].priority = 1000
+		colorschemes[i].config = function()
+			vim.cmd("colorscheme " .. colorscheme)
+		end
+	end
+end
+
+return colorschemes
