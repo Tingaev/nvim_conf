@@ -1,10 +1,11 @@
 return {
 	"neovim/nvim-lspconfig",
+    version = "v2.5.0",
 	lazy = false,
 	keys = { { "<leader>lm", "<cmd>Mason<cr>", desc = "Mason" } },
 	dependencies = {
-		{ "williamboman/mason.nvim", opts = {} },
-		{ "williamboman/mason-lspconfig.nvim", config = function() end },
+		{ "williamboman/mason.nvim", opts = {}, version = "1.*" },
+		{ "williamboman/mason-lspconfig.nvim", version = "1.*", config = function() end },
 	},
 	config = function(_, opts)
 		require("mason-lspconfig").setup {

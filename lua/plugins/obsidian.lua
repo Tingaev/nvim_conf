@@ -21,31 +21,63 @@ local prefix_paths = {
 	},
 }
 
-function dir_auto_picker(spec)
-	local path = spec.dir / tostring(spec.id)
+-- function dir_auto_picker(spec)
+-- 	local path = spec.dir / tostring(spec.id)
+--
+-- 	if spec.title then
+-- 		for prefix, config in pairs(prefix_paths) do
+-- 			if string.starts(spec.title, prefix) then
+-- 				path = spec.dir
+-- 				for _, part in ipairs(config.path) do
+-- 					path = path / part
+-- 				end
+--
+-- 				local title = config.full_prefix .. string.sub(spec.title, #prefix + 1)
+-- 				path = path / title
+-- 				break
+-- 			end
+-- 		end
+-- 	end
+--
+-- 	return path:with_suffix ".md"
+-- end
 
-	if spec.title then
-		for prefix, config in pairs(prefix_paths) do
-			if string.starts(spec.title, prefix) then
-				path = spec.dir
-				for _, part in ipairs(config.path) do
-					path = path / part
-				end
+local function starts_with(str, prefix)
+	return str:sub(1, #prefix) == prefix
+end
 
-				local title = config.full_prefix .. string.sub(spec.title, #prefix + 1)
-				path = path / title
-				break
+local function dir_auto_picker(spec)
+	vim.notify("note_path_func CALLED: " .. vim.inspect(spec), vim.log.levels.WARN)
+
+	local name = tostring(spec.title or spec.id)
+	local path = spec.dir / name
+
+	for prefix, config in pairs(prefix_paths) do
+        vim.notify("name" .. name, vim.log.levels.WARN)
+        vim.notify("prefix: " .. prefix, vim.log.levels.WARN)
+		if starts_with(name, prefix) then
+			path = spec.dir
+
+			for _, part in ipairs(config.path) do
+				path = path / part
 			end
+
+			local title = config.full_prefix .. name:sub(#prefix + 1)
+			path = path / title
+			break
 		end
 	end
 
-	return path:with_suffix ".md"
+	vim.notify("note path: " .. tostring(path:with_suffix(".md")), vim.log.levels.WARN)
+
+	return path:with_suffix(".md")
 end
 
+
 return {
-	"epwalsh/obsidian.nvim",
+	"obsidian-nvim/obsidian.nvim",
 	version = "*",
-	lazy = true,
+	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
@@ -75,7 +107,7 @@ return {
 	},
 	keys = {
 		{ "<leader>oT", "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
-		{ "<leader>ob", "<cmd>ObsidianBacklinks<CR>", desc = "Show ObsidianBacklinks" },
+		{ "<leader>ob", "<cmd>Obsidian backlinks<CR>", desc = "Show Obsidian backlinks" },
 		{ "<leader>ol", "<cmd>ObsidianLinks<CR>", desc = "Show ObsidianLinks" },
 		{ "<leader>on", "<cmd>ObsidianNew<CR>", desc = "Create New Note" },
 		{ "<leader>os", "<cmd>ObsidianSearch<CR>", desc = "Search Obsidian" },
