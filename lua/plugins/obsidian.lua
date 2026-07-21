@@ -21,40 +21,19 @@ local prefix_paths = {
 	},
 }
 
--- function dir_auto_picker(spec)
--- 	local path = spec.dir / tostring(spec.id)
---
--- 	if spec.title then
--- 		for prefix, config in pairs(prefix_paths) do
--- 			if string.starts(spec.title, prefix) then
--- 				path = spec.dir
--- 				for _, part in ipairs(config.path) do
--- 					path = path / part
--- 				end
---
--- 				local title = config.full_prefix .. string.sub(spec.title, #prefix + 1)
--- 				path = path / title
--- 				break
--- 			end
--- 		end
--- 	end
---
--- 	return path:with_suffix ".md"
--- end
 
 local function starts_with(str, prefix)
 	return str:sub(1, #prefix) == prefix
 end
 
-local function dir_auto_picker(spec)
-	vim.notify("note_path_func CALLED: " .. vim.inspect(spec), vim.log.levels.WARN)
+local function id_picker(title)
+    return title .. '.md'
+end
 
+local function dir_auto_picker(spec)
 	local name = tostring(spec.title or spec.id)
-	local path = spec.dir / name
 
 	for prefix, config in pairs(prefix_paths) do
-        vim.notify("name" .. name, vim.log.levels.WARN)
-        vim.notify("prefix: " .. prefix, vim.log.levels.WARN)
 		if starts_with(name, prefix) then
 			path = spec.dir
 
@@ -104,6 +83,7 @@ return {
 			enable = false,
 		},
 		note_path_func = dir_auto_picker,
+		note_id_func = id_picker,
 	},
 	keys = {
 		{ "<leader>oT", "<cmd>ObsidianTemplate<CR>", desc = "Insert Obsidian Template" },
